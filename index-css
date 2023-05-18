@@ -1,0 +1,4 @@
+title {
+    color:White;
+	text-shadow: navy 1px 0 10px;
+}
