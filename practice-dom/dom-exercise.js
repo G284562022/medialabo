@@ -30,9 +30,6 @@ p.setAttribute('src', 'jiro.png');
 p.setAttribute('src', 'hanako.png');
 div.insertAdjacentElement('beforeend', p);
 
-
-let p = document.createElement('p');				// 新しい p要素を作成
-p.textContent = 'taro.png';	
 // 練習4-4 箇条書き削除プログラム
 let w = document.querySelector('ul#location');			// li#whale 要素を検索
 w.remove();	
