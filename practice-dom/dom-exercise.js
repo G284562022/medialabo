@@ -14,11 +14,16 @@ let data = [
 //// 注意: 以上は編集しないこと!
 
 // 練習4-2 メッセージ追加プログラム
-let h2 = document.querySelectorAll('h2#ex42');
-console.log(text-emphasis: sesame green);
+let h2 = document.querySelector('h2#ex42');
+let p = Document.createElement('p');
+p.textContent = '写真表と都市の緯度経度のページです。';
+h2.insertAdjacentElement('afterend' ,p);
+p.style.textEmphasis='text-emphasis:sesame green';
+
+
 
 // 練習4-3 写真表作成プログラム
-
+let p = document.createElement('p');
 
 
 let p = document.createElement('p');				// 新しい p要素を作成
