@@ -14,13 +14,18 @@ let data = [
 //// 注意: 以上は編集しないこと!
 
 // 練習4-2 メッセージ追加プログラム
-
+let h2 = document.querySelectorAll('h2#ex42');
+console.log(text-emphasis: sesame green);
 
 // 練習4-3 写真表作成プログラム
 
 
-// 練習4-4 箇条書き削除プログラム
 
+let p = document.createElement('p');				// 新しい p要素を作成
+p.textContent = 'taro.png';	
+// 練習4-4 箇条書き削除プログラム
+let w = document.querySelector('ul#location');			// li#whale 要素を検索
+w.remove();	
 
 // 練習4-5 箇条書き追加プログラム
 
