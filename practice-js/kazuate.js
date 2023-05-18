@@ -21,15 +21,12 @@ const iterator = source[Symbol.iterator]();
         console.log('まちがい。答えはもっと大きいですよ');
     } else if (4 > kotae){
        console.log('まちがい。答えはもっと小さいですよ');
-    } else {
+    } else if(4== kotae) {
         console.log('正解です。おめでとう!');
     }
 } 
 
-hantei();
-hantei();
-hantei();
-hantei();
+
   console.log("答えは"+kotae+"でした。すでにゲームは終わっています");
 
 
