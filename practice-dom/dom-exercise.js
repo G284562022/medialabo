@@ -25,7 +25,9 @@ p.style.textEmphasis='text-emphasis:sesame green';
 // 練習4-3 写真表作成プログラム
 let div = document.querySelector('div#pohtotable');
 let p = document.createElement('p');
-p.setAttribute('href', 'practice/taro.png');
+p.setAttribute('src', 'taro.png');
+p.setAttribute('src', 'jiro.png');
+p.setAttribute('src', 'hanako.png');
 div.insertAdjacentElement('beforeend', p);
 
 
