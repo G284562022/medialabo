@@ -25,9 +25,11 @@ p.style.textEmphasis='text-emphasis:sesame green';
 // 練習4-3 写真表作成プログラム
 let div = document.querySelector('div#pohtotable');
 let p = document.createElement('p');
+let img = document.createElement('img');
+
 p.setAttribute('src', 'taro.png');
-p.setAttribute('src', 'jiro.png');
-p.setAttribute('src', 'hanako.png');
+p2.setAttribute('src', 'jiro.png');
+p3.setAttribute('src', 'hanako.png');
 div.insertAdjacentElement('beforeend', p);
 
 // 練習4-4 箇条書き削除プログラム
