@@ -6,12 +6,7 @@ h1 {
 	
 }
 
-.gradation {
-	background: linear-gradient(0deg, #fac0d3 20%, #97fef9 89%);
-  	background: -webkit-linear-gradient(90deg, #fac0d3 20%, #97fef9 89%);
-	  -webkit-background-clip: text;
-	  -webkit-text-fill-color: transparent;
-  }
+
 
 h2 {
 	
