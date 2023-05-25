@@ -15,7 +15,7 @@ let data = [
 
 // 練習4-2 メッセージ追加プログラム
 let h2 = document.querySelector('h2#ex42');
-let p = Document.createElement('p');
+let p = document.createElement('p');
 p.textContent = '写真表と都市の緯度経度のページです。';
 h2.insertAdjacentElement('afterend' ,p);
 p.style.textEmphasis='text-emphasis:sesame green';
@@ -27,20 +27,20 @@ let div = document.querySelector('div#pohtotable');
 
 let taro =document.createElement('img')
 taro.setAttribute('src','taro.png');
-let tarop = dovcument.createElement('p');
-tarop.interAdjacentElement('beforeend', tarop);
+let tarop = document.createElement('p');
+tarop.insertAdjacentElement('beforeend', taro);
 div.insertAdjacentElement('beforeend', tarop);
 
 let jiro =document.createElement('img')
 taro.setAttribute('src','jiro.png');
 let jirop = dovcument.createElement('p');
-jirop.interAdjacentElement('beforeend', jirop);
+jirop.insertAdjacentElement('beforeend', jiro);
 div.insertAdjacentElement('beforeend', jirop);
 
 let hanako =document.createElement('img')
 taro.setAttribute('src','hanako.png');
 let hanakop = dovcument.createElement('p');
-hanakop.interAdjacentElement('beforeend', hanakop);
+hanakop.insertAdjacentElement('beforeend', hanako);
 div.insertAdjacentElement('beforeend', hanakop);
 
 // 練習4-4 箇条書き削除プログラム
