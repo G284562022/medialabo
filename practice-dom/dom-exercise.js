@@ -23,21 +23,21 @@ p.style.textEmphasis='text-emphasis:sesame green';
 
 
 // 練習4-3 写真表作成プログラム
-let div = document.querySelector('div#pohtotable');
+let div = document.querySelector('div#phototable');
 
-let taro =document.createElement('img')
+let taro =document.createElement('img');
 taro.setAttribute('src','taro.png');
 let tarop = document.createElement('p');
 tarop.insertAdjacentElement('beforeend', taro);
-div.insertAdjacentElement('beforeend', tarop);
+div.insertAdjacentElement('beforeend',tarop);
 
-let jiro =document.createElement('img')
+let jiro =document.createElement('img');
 taro.setAttribute('src','jiro.png');
 let jirop = dovcument.createElement('p');
 jirop.insertAdjacentElement('beforeend', jiro);
 div.insertAdjacentElement('beforeend', jirop);
 
-let hanako =document.createElement('img')
+let hanako =document.createElement('img');
 taro.setAttribute('src','hanako.png');
 let hanakop = dovcument.createElement('p');
 hanakop.insertAdjacentElement('beforeend', hanako);
