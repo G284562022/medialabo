@@ -46,4 +46,10 @@ function hantei() {
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
   // 課題3-1における出力先はコンソール
+  let s1 = document.querySelector('span#kaisu');		
+s1.textContent = ka
+let s2 = document.querySelector('span#answe');
+s2.textComent = answer;
+
+
 }
