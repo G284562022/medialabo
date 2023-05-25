@@ -4,27 +4,30 @@ console.log('答え（デバッグ用）: ' + kotae);
 
 // 入力回数（予想回数）
 let kaisu = 0;
+let sei = 0;
 
 // 予想を4回実行する
 // 将来以下の hantei(); の4回の呼び出しを全て削除する
 // 代わりにここでは，ボタンを押したら hantei() を呼び出すイベント処理をする
 hantei();
-hantei();
-hantei();
-hantei();
-
-let yoso = 4;
-
-
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
-  kaisu++;
-  console.log(kaisu+"回目の予想:"+yoso);
-  let s1 = document.querySelector('span#kaisu');		
-  s1.textContent = kaisu;
-  let s2 = document.querySelector('span#answer');
-  s2.textComent = yoso;
+
+  let yoso = 4;
+  kaisu = kaisu +1;
+  let kai = document.querySelector('span#kaisu');
+  kai = kaisu;
+  document.getElementById('kaisu').textContent = kai;
+
+  let an = document.querySelector('span#answer');
+  an = yoso;
+  document.getElementById('answer').textcoment = an;
+  
+
+
+  var re = document.querySelector('soan#result');
+  
 
   if(kaisu>3){
     console.log("答えは"+kotae+"でした。すでにゲームは終わっています");
@@ -43,6 +46,7 @@ function hantei() {
       } else {
         console.log("答えは"+kotae+"でした。すでにゲームは終わっています");
       }
+      dovument.getElementById('result').textContent = re;
     }
   
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
