@@ -44,7 +44,7 @@ hanakop.interAdjacentElement('beforeend', hanakop);
 div.insertAdjacentElement('beforeend', hanakop);
 
 // 練習4-4 箇条書き削除プログラム
-let li = document.querySelector('li');			// li#whale 要素を検索
+let li = document.querySelector('li');			
 for (let l of li){
 	l.remove();
 }
