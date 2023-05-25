@@ -201,5 +201,17 @@ let data = {
 
 /////////// 課題3-2 ここからプログラムを書こう
 console.log('===== 要素の検索 =====');
-document.querySelector('td#strawberry');
+
+
+let a =document.querySelector('p#gurume');
+let b = document.createElement('p');
+let m = data.results;
+for (let n of m.shop){
+  b.textContent = n.address;
+  c1.textContent = n.name;
+
+  a.insertAdjacentElement('beforeend',b);
+
+  a.insertAdjacentElement('beforeend',c);
+}
 
