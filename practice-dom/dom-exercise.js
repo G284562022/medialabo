@@ -24,17 +24,30 @@ p.style.textEmphasis='text-emphasis:sesame green';
 
 // 練習4-3 写真表作成プログラム
 let div = document.querySelector('div#pohtotable');
-let p = document.createElement('p');
-let img = document.createElement('img');
 
-p.setAttribute('src', 'taro.png');
-p2.setAttribute('src', 'jiro.png');
-p3.setAttribute('src', 'hanako.png');
-div.insertAdjacentElement('beforeend', p);
+let taro =document.createElement('img')
+taro.setAttribute('src','taro.png');
+let tarop = dovcument.createElement('p');
+tarop.interAdjacentElement('beforeend', tarop);
+div.insertAdjacentElement('beforeend', tarop);
+
+let jiro =document.createElement('img')
+taro.setAttribute('src','jiro.png');
+let jirop = dovcument.createElement('p');
+jirop.interAdjacentElement('beforeend', jirop);
+div.insertAdjacentElement('beforeend', jirop);
+
+let hanako =document.createElement('img')
+taro.setAttribute('src','hanako.png');
+let hanakop = dovcument.createElement('p');
+hanakop.interAdjacentElement('beforeend', hanakop);
+div.insertAdjacentElement('beforeend', hanakop);
 
 // 練習4-4 箇条書き削除プログラム
-let w = document.querySelector('ul#location');			// li#whale 要素を検索
-w.remove();	
+let li = document.querySelector('li');			// li#whale 要素を検索
+for (let l of li){
+	l.remove();
+}
 
 // 練習4-5 箇条書き追加プログラム
 
