@@ -21,6 +21,11 @@ let yoso = 4;
 function hantei() {
   kaisu++;
   console.log(kaisu+"回目の予想:"+yoso);
+  let s1 = document.querySelector('span#kaisu');		
+  s1.textContent = kaisu;
+  let s2 = document.querySelector('span#answer');
+  s2.textComent = yoso;
+
   if(kaisu>3){
     console.log("答えは"+kotae+"でした。すでにゲームは終わっています");
   } else if (kaisu<3){
@@ -46,10 +51,8 @@ function hantei() {
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
   // 課題3-1における出力先はコンソール
-  let s1 = document.querySelector('span#kaisu');		
-s1.textContent = ka
-let s2 = document.querySelector('span#answe');
-s2.textComent = answer;
+  
+
 
 
 }
