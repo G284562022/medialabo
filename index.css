@@ -1,0 +1,32 @@
+h1 {
+	
+	color:White;
+	font-family: 'Amatic SC', cursive;
+	background-color: #6fa5f5;
+	
+}
+
+
+
+h2 {
+	
+	padding: 5px;
+	font-family:メイリオ;
+	color:#3f3faf;
+	background : linear-gradient(0.25turn,white,#c2d6f3);
+}
+
+div#zentai {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows:500px 500px;
+	flex-direction:row;
+	grid-gap: 30px;
+	width: 1000px;
+	
+}
+
+div#zentai > div {
+	padding: 5px;
+	background-color: #ddebff;
+}
