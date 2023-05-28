@@ -1,7 +1,7 @@
 h1 {
 	
 	color:White;
-	text-shadow: navy 1px 0 10px;
+	text-shadow: navy 1px 0 20px;
 
 }
 
@@ -11,16 +11,16 @@ div {
 }
 
 th, td {
-	border: 1px solid #bbb;
-	padding: 2px 8px 0;
+	border: 10px solid #bbb;
+	padding: 10px 20px 0;
 	text-align: left;
   }
   
 
 table {
-	border: 2px solid #555;
+	border: 10px solid #555;
 	border-collapse: collapse;
-	font: 16px "Lucida Grande", "Helvetica", "Arial", sans-serif;
+	font: 25px "Lucida Grande", "Helvetica", "Arial", sans-serif;
   }
   
 
