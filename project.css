@@ -11,8 +11,8 @@ div {
 }
 
 th, td {
-	border: 10px solid #bbb;
-	padding: 10px 20px 0;
+	border: 1px solid #bbb;
+	padding: 2px 14px 0;
 	text-align: left;
   }
   
