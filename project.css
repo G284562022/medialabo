@@ -18,9 +18,9 @@ th, td {
   
 
 table {
-	border: 10px solid #555;
+	border: 1px solid #555;
 	border-collapse: collapse;
-	font: 25px "Lucida Grande", "Helvetica", "Arial", sans-serif;
+	font: 16px "Lucida Grande", "Helvetica", "Arial", sans-serif;
   }
   
 
