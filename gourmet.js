@@ -207,10 +207,11 @@ let a = document.querySelector('p#gurume');
     for (let n of m.shop) {
       b.textContent = n.address;
       c.textContent = n.name;
-      a.insertAdjacentElement('gurume',b);
-      a.insertAdjacentElement('gurume',c);
+      a.insertAdjacentElement('beforeend',b);
+      a.insertAdjacentElement('beforeend',c);
     } 
     
 
+    
 
 
