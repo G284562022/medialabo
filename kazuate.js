@@ -16,7 +16,7 @@ let c1 = document.querySelector('hantei');
 // ボタンを押した後の処理をする関数 hantei() の定義
 {
 let a2 =document.querySelector('#hantei');
-function hantei();
+
 let a =document.querySelector('input[]name="label"]');
 let b = a.value;
 yoso = Number(b);
