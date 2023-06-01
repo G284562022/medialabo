@@ -9,21 +9,19 @@ let sei = 0;
 // 予想を4回実行する
 // 将来以下の hantei(); の4回の呼び出しを全て削除する
 // 代わりにここでは，ボタンを押したら hantei() を呼び出すイベント処理をする
-let c1 = document.querySelector('hantei');
+let c = document.querySelector('#hantei');
+c.addEventListener('click',hantei);
 
 
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 
-let a2 =document.querySelector('#hantei');
+
 function hantei(){
-let a =document.querySelector('input[]name="label"]');
-let b = a.value;
-yoso = Number(b);
+let a =document.querySelector('input[name="label"]');
+let yoso = parseInt(a.value);
 
 
-
-  let yoso = 4;
   kaisu = kaisu +1;
   let kai = document.querySelector('span#kaisu');
   kai = kaisu;
