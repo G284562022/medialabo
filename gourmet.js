@@ -200,6 +200,8 @@ let data = {
 };
 
 /////////// 課題3-2 ここからプログラムを書こう
+let k;
+let d2;
 let a = document.querySelector('p#gurume');
   let b = document.createElement('p');
   let c = document.createElement('p');
@@ -210,46 +212,62 @@ let a = document.querySelector('p#gurume');
       a.insertAdjacentElement('beforeend',b);
       a.insertAdjacentElement('beforeend',c);
     } 
+
+
+    let d = document.querySelector('button#shimei');
+    b.addEventListener('click', showSelectResult);
     
+    function showSelectResult() {
+        let s = document.querySelector('select#santaro');
+        let idx = s.selectedIndex;  // idx 番目の option が選択された
+        k = idx;
 
     
+        let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
+        let o = os.item(idx);       // os の idx 番目の要素
+        d2 = 0;
     
-    function sendRequest() {
-      // URL を設定
-      let url = 'https://www.nishita-lab.org/web-contents/jsons/test.json';
-    
-      // 通信開始
-      axios.get(url)
-        .then(showResult)
-        .catch(showError)
-        .then(finish);
+        console.log('選択された ' + idx + ' 番目の option の情報:');
+        console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
+        console.log('  textContent='+o.textContent);
     }
-    
-    // 通信が成功した時の処理
-    function showResult(resp) {
-      // サーバから送られてきたデータを出力
-      let data = resp.data;
-    
-      // data が文字列型なら，オブジェクトに変換する
-      if (typeof data === 'string') {
-        data = JSON.parse(data);
+
+    let b = document.querySelector(‘#btn’);
+b.addEventListener('click', kensaku);
+
+
+function kensaku(){
+      let url;
+      if (f1<10) {
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00' + f1 + '.json';
+      }else {
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + f1 + '.json';
       }
-    
-      // data をコンソールに出力
-      console.log(data);
-    
-      // data.x を出力
-      console.log(data.x);
-    }
-    
-    // 通信エラーが発生した時の処理
-    function showError(err) {
-      console.log(err);
-    }	
-    
-    // 通信の最後にいつも実行する処理
-    function finish() {
-      console.log('Ajax 通信が終わりました');
-    }
+      axios.get(url).then(showResult).catch(showError).then(finish);
+  }
+function showResult(resp) {
+      let web = resp.data;
+      if (typeof web === 'string') {
+           web = JSON.parse(data1);
+       }
+       let web1 = data1.results;
+       let web2 = data2.shop;
+       console.log(web);
+       console.log(web1);
+       console.log(web2);
+	if (web2.length===0) {
+        b.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
+       } else {
+      for (let d1 of web2) {
+        console.log(d1);
+      }
+      }
+  }
+  function showError(err) {
+    console.log(err);
+  }
+  function finish() {
+    console.log('Ajax 通信が終わりました。');
+  }
 
-
+    

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel ="stylesheet" href="project.css">
+    <link rel ="stylesheet" hrefproject.css">
     <title>グルメ情報</title>
 
     <script src="gourmet.js" defer></script>
@@ -15,11 +15,31 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
   <script src="gourmet.js" defer></script>
   
-  <label for="shimei">ID: </label>
-    <input type="text" name="shimei" id="shimei" size="10">
-    <button id="print">検索</button>
-    <p></p>
+  
+      
+      <label for="santaro">プルダウンメニュー</label>
+      <select name="santaro" id="santaro">
+          <option value="">グルメジャンル</option>
+          <option value="izakaya">居酒屋</option>
+          <option value="bal">ダイニングバー・バル</option>
+          <option value="sousaku">創作料理</option>
+          <option value="wa">和食</option>
+          <option value="yo">洋食</option>
+          <option value="itari">イタリアン・フレンチ</option>
+          <option value="chu">中華</option>
+          <option value="niku">焼肉・ホルモン</option>
+          <option value="aizia">アジア・エスニック料理</option>
+          <option value="kuni">各国料理</option>
+          <option value="karaoke">カラオケ・パーティ</option>
+          <option value="ba">バー・カクテル</option>
+          <option value="ra">ラーメン</option>
+          <option value="cafe">カフェ・スイーツ</option>
+          <option value="sonota">その他グルメ</option>
+      </select>
+      <button id="btn">コンソールに表示</button>
+    </body>
 
+    <script scr ="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
     <p id ="gurume"></p>
   
     <table>
