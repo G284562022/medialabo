@@ -1,5 +1,5 @@
 let data = {
-  "results": {
+  results: {
     "api_version": "1.26",
     "results_available": 52,
     "results_returned": "10",
@@ -197,11 +197,21 @@ let data = {
       }
     ]
   }
-};
+}
 
 /////////// 課題3-2 ここからプログラムを書こう
 let k;
 let d2;
+let h1;
+let h2;
+let w = document.createElement('p');
+let e = document.createElement('p');
+let r = document.createElement('p');
+let y = document.createElement('p');
+let u = document.createElement('p');
+let i = document.createElement('p');
+
+let v = document.createElement('p');
 let a = document.querySelector('p#gurume');
   let b = document.createElement('p');
   let c = document.createElement('p');
@@ -232,16 +242,16 @@ let a = document.querySelector('p#gurume');
         console.log('  textContent='+o.textContent);
     }
 
-    let b = document.querySelector(‘#btn’);
+    let t = document.querySelector('#btn');
 b.addEventListener('click', kensaku);
 
 
 function kensaku(){
       let url;
-      if (f1<10) {
-        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00' + f1 + '.json';
+      if (h1<10) {
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00' + h1 + '.json';
       }else {
-        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + f1 + '.json';
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + h1 + '.json';
       }
       axios.get(url).then(showResult).catch(showError).then(finish);
   }
@@ -250,16 +260,23 @@ function showResult(resp) {
       if (typeof web === 'string') {
            web = JSON.parse(data1);
        }
-       let web1 = data1.results;
-       let web2 = data2.shop;
+       let web1 = web.results;
+       let web2 = web1.shop;
        console.log(web);
        console.log(web1);
        console.log(web2);
 	if (web2.length===0) {
-        b.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
+        t.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
        } else {
       for (let d1 of web2) {
         console.log(d1);
+        w.textContent = ("店舗名: " + d1.name);
+        e.textContent = ("住所: " + d1.address);
+        r.textContent = ("アクセス情報: " + d1.access);
+        y.textContent = ("キャッチコピー: " + d1.catch);
+        u.textContent = ("座席数: " + d1.capacity + "席");
+        i.textContent = ("営業日: " + d1.open );
+
       }
       }
   }
