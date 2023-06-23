@@ -38,10 +38,10 @@ let yoso = parseInt(a.value);
   } else if (kotae !==yoso && kaisu ==3){
     re = ('まちがい。残念でした答えは'+kotae+'です。');
   }else if(kotae > yoso && kaisu < 4){
-        re = ('まちがい。答えはもっと大きいですよ');
-    } else if (kotae > yoso && kaisu<4){
-       re = ('まちがい。答えはもっと小さいですよ');
-    } else if(kotae === yoso && kaisu < 4) {
+    re = ('まちがい。答えはもっと大きいですよ');
+  }else if(kotae < yoso && kaisu < 4){
+    re = ('まちがい。答えはもっと小さいですよ');
+  } else if(kotae === yoso && kaisu < 4) {
        sei++; 
     
       if (sei === 1){
