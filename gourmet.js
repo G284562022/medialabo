@@ -200,19 +200,19 @@ let data = {
 }
 
 /////////// 課題3-2 ここからプログラムを書こう
-let k;
+let d1;
 let d2;
 let h1;
 let h2;
+let a = document.querySelector('p#gurume');
 let w = document.createElement('p');
 let e = document.createElement('p');
 let r = document.createElement('p');
 let y = document.createElement('p');
 let u = document.createElement('p');
 let i = document.createElement('p');
-
 let v = document.createElement('p');
-let a = document.querySelector('p#gurume');
+
   let b = document.createElement('p');
   let c = document.createElement('p');
   let m = data.results;
@@ -230,13 +230,10 @@ let a = document.querySelector('p#gurume');
     function showSelectResult() {
         let s = document.querySelector('select#santaro');
         let idx = s.selectedIndex;  // idx 番目の option が選択された
-        k = idx;
-
-    
+        d1 = idx;
         let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
         let o = os.item(idx);       // os の idx 番目の要素
-        d2 = 0;
-    
+        d2 = o;
         console.log('選択された ' + idx + ' 番目の option の情報:');
         console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
         console.log('  textContent='+o.textContent);
