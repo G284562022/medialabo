@@ -211,10 +211,9 @@ let r = document.createElement('p');
 let y = document.createElement('p');
 let u = document.createElement('p');
 let i = document.createElement('p');
-let v = document.createElement('p');
 let q = document.createElement ('a');
 let d = document.querySelector('button#shimei');
-b.addEventListener('click', showSelectResult);
+d.addEventListener('click', showSelectResult);
     
     function showSelectResult() {
         let s = document.querySelector('select#santaro');
@@ -228,7 +227,7 @@ b.addEventListener('click', showSelectResult);
         console.log('  textContent='+o.textContent);
     }
 
-let t = document.querySelector('#btn');
+let t = document.querySelector('button#shimei');
 t.addEventListener('click', kensaku);
 
 
@@ -243,51 +242,46 @@ function kensaku(){
       axios.get(url).then(showResult).catch(showError).then(finish);
   }
 function showResult(resp) {
-      let web = resp.data;
-      if (typeof web === 'string') {
-           web = JSON.parse(web);
+      let web1 = resp.data;
+      if (typeof web1 === 'string') {
+           web1 = JSON.parse(web);
        }
-       let web1 = web.results;
-       let web2 = web1.shop;
-       console.log(web);
+       let web2 = web1.results;
+       let web3 = web2.shop;
        console.log(web1);
        console.log(web2);
+       console.log(web3);
 	if (web2.length===0) {
         t.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
         w.textContent = null;
         e.textContent = null;
-        r.textContent = null;
-        y.textContent = null;
         u.textContent = null;
         i.textContent = null;
+        q.textContent = null;
         a.insertAdjacentElement('beforeend',t);
         a.insertAdjacentElement('beforeend',w);
         a.insertAdjacentElement('beforeend',e);
-        a.insertAdjacentElement('beforeend',r);
-        a.insertAdjacentElement('beforeend',y);
-        a.insertAdjacentElement('beforeend',u);
         a.insertAdjacentElement('beforeend',i);
+        a.insertAdjacentElement('beforeend',u);
         a.insertAdjacentElement('beforeend',q);
+        
        } else {
       for (let c1 of web2) {
         console.log(c1);
         let c2 = c1.coupon_urls;
-        w.textContent = ("店舗名: " + d1.name);
-        e.textContent = ("住所: " + d1.address);
-        r.textContent = ("アクセス情報: " + d1.access);
-        y.textContent = ("キャッチコピー: " + d1.catch);
-        u.textContent = ("座席数: " + d1.capacity + "席");
-        i.textContent = ("営業日: " + d1.open );
-        q.textContent ='詳細につきましてはこちらをクリックしてください。ホットペッパーグルメのページに飛びます。';
+        t.textContent = ("店舗名: " + d1.name);
+        w.textContent = ("住所: " + d1.address);
+        e.textContent = ("アクセス情報: " + d1.access);
+        i.textContent = ("座席数: " + d1.capacity + "席");
+        u.textContent = ("営業日: " + d1.open );
+        q.textContent ='詳細はこちら';
         q.setAttribute('href',c2.pc);
         q. setAttribute('target' , '_blank');
         a.insertAdjacentElement('beforeend',t);
         a.insertAdjacentElement('beforeend',w);
         a.insertAdjacentElement('beforeend',e);
-        a.insertAdjacentElement('beforeend',r);
-        a.insertAdjacentElement('beforeend',y);
-        a.insertAdjacentElement('beforeend',u);
         a.insertAdjacentElement('beforeend',i);
+        a.insertAdjacentElement('beforeend',u);
         a.insertAdjacentElement('beforeend',q);
         }
       }
