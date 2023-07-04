@@ -212,20 +212,9 @@ let y = document.createElement('p');
 let u = document.createElement('p');
 let i = document.createElement('p');
 let v = document.createElement('p');
-
-  let b = document.createElement('p');
-  let c = document.createElement('p');
-  let m = data.results;
-    for (let n of m.shop) {
-      b.textContent = n.address;
-      c.textContent = n.name;
-      a.insertAdjacentElement('beforeend',b);
-      a.insertAdjacentElement('beforeend',c);
-    } 
-
-
-    let d = document.querySelector('button#shimei');
-    b.addEventListener('click', showSelectResult);
+let q = document.createElement ('a');
+let d = document.querySelector('button#shimei');
+b.addEventListener('click', showSelectResult);
     
     function showSelectResult() {
         let s = document.querySelector('select#santaro');
@@ -239,23 +228,24 @@ let v = document.createElement('p');
         console.log('  textContent='+o.textContent);
     }
 
-    let t = document.querySelector('#btn');
-b.addEventListener('click', kensaku);
+let t = document.querySelector('#btn');
+t.addEventListener('click', kensaku);
 
 
 function kensaku(){
       let url;
+      let j = 'G0';
       if (h1<10) {
-        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00' + h1 + '.json';
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00' +j+ '0'+ d1 + '.json';
       }else {
-        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + h1 + '.json';
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' +j+ '0' + d1 + '.json';
       }
       axios.get(url).then(showResult).catch(showError).then(finish);
   }
 function showResult(resp) {
       let web = resp.data;
       if (typeof web === 'string') {
-           web = JSON.parse(data1);
+           web = JSON.parse(web);
        }
        let web1 = web.results;
        let web2 = web1.shop;
@@ -264,17 +254,42 @@ function showResult(resp) {
        console.log(web2);
 	if (web2.length===0) {
         t.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
+        w.textContent = null;
+        e.textContent = null;
+        r.textContent = null;
+        y.textContent = null;
+        u.textContent = null;
+        i.textContent = null;
+        a.insertAdjacentElement('beforeend',t);
+        a.insertAdjacentElement('beforeend',w);
+        a.insertAdjacentElement('beforeend',e);
+        a.insertAdjacentElement('beforeend',r);
+        a.insertAdjacentElement('beforeend',y);
+        a.insertAdjacentElement('beforeend',u);
+        a.insertAdjacentElement('beforeend',i);
+        a.insertAdjacentElement('beforeend',q);
        } else {
-      for (let d1 of web2) {
-        console.log(d1);
+      for (let c1 of web2) {
+        console.log(c1);
+        let c2 = c1.coupon_urls;
         w.textContent = ("店舗名: " + d1.name);
         e.textContent = ("住所: " + d1.address);
         r.textContent = ("アクセス情報: " + d1.access);
         y.textContent = ("キャッチコピー: " + d1.catch);
         u.textContent = ("座席数: " + d1.capacity + "席");
         i.textContent = ("営業日: " + d1.open );
-
-      }
+        q.textContent ='詳細につきましてはこちらをクリックしてください。ホットペッパーグルメのページに飛びます。';
+        q.setAttribute('href',c2.pc);
+        q. setAttribute('target' , '_blank');
+        a.insertAdjacentElement('beforeend',t);
+        a.insertAdjacentElement('beforeend',w);
+        a.insertAdjacentElement('beforeend',e);
+        a.insertAdjacentElement('beforeend',r);
+        a.insertAdjacentElement('beforeend',y);
+        a.insertAdjacentElement('beforeend',u);
+        a.insertAdjacentElement('beforeend',i);
+        a.insertAdjacentElement('beforeend',q);
+        }
       }
   }
   function showError(err) {
