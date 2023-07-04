@@ -218,10 +218,10 @@ d.addEventListener('click', showSelectResult);
     function showSelectResult() {
         let s = document.querySelector('select#santaro');
         let idx = s.selectedIndex;  // idx 番目の option が選択された
-        d1 = idx;
+        h1 = idx;
         let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
         let o = os.item(idx);       // os の idx 番目の要素
-        d2 = o;
+        h2 = o;
         console.log('選択された ' + idx + ' 番目の option の情報:');
         console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
         console.log('  textContent='+o.textContent);
@@ -235,23 +235,23 @@ function kensaku(){
       let url;
       let j = 'G0';
       if (h1<10) {
-        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G00' +j+ '0'+ d1 + '.json';
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' +j+ '0'+ h1 + '.json';
       }else {
-        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' +j+ '0' + d1 + '.json';
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' +j+ '0' + h1 + '.json';
       }
       axios.get(url).then(showResult).catch(showError).then(finish);
   }
 function showResult(resp) {
       let web1 = resp.data;
       if (typeof web1 === 'string') {
-           web1 = JSON.parse(web);
+           web1 = JSON.parse(web1);
        }
        let web2 = web1.results;
        let web3 = web2.shop;
        console.log(web1);
        console.log(web2);
        console.log(web3);
-	if (web2.length===0) {
+	if (web3.length===0) {
         t.textContent = ('検索しましたが' + d2.textContent + 'の料理店はありませんでした。');
         w.textContent = null;
         e.textContent = null;
@@ -266,17 +266,17 @@ function showResult(resp) {
         a.insertAdjacentElement('beforeend',q);
         
        } else {
-      for (let c1 of web2) {
-        console.log(c1);
-        let c2 = c1.coupon_urls;
+      for (let d1 of web3) {
+        console.log(d1);
+        let d2 = d1.coupon_urls;
         t.textContent = ("店舗名: " + d1.name);
         w.textContent = ("住所: " + d1.address);
         e.textContent = ("アクセス情報: " + d1.access);
         i.textContent = ("座席数: " + d1.capacity + "席");
         u.textContent = ("営業日: " + d1.open );
         q.textContent ='詳細はこちら';
-        q.setAttribute('href',c2.pc);
-        q. setAttribute('target' , '_blank');
+        q.setAttribute('href',d2.pc);
+        q.setAttribute('target' , '_blank');
         a.insertAdjacentElement('beforeend',t);
         a.insertAdjacentElement('beforeend',w);
         a.insertAdjacentElement('beforeend',e);
